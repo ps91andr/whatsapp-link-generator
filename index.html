@@ -96,16 +96,11 @@
         <option value="967">🇾🇪 اليمن (+967)</option>
     </select>
 
-    <input type="tel" id="phoneNumber" placeholder="مثال: 512345678" oninput="validatePhoneNumber(event)">
+    <input type="text" id="phoneNumber" placeholder="مثال: 512345678" oninput="validatePhoneNumber()">
     <br><br>
     <button onclick="openWhatsApp()">فتح واتساب</button>
 
     <script>
-        function validatePhoneNumber(event) {
-            // إزالة أي حرف غير رقمي من حقل رقم الهاتف
-            event.target.value = event.target.value.replace(/[^0-9]/g, '');
-        }
-
         function openWhatsApp() {
             const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
@@ -117,6 +112,12 @@
 
             const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}`;
             window.open(whatsappLink, '_blank');
+        }
+
+        // دالة للتحقق من الرقم والتأكد من أنه يحتوي على أرقام فقط
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById('phoneNumber');
+            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, ''); // حذف أي شيء ليس رقماً
         }
     </script>
 
