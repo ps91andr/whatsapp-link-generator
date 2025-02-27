@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنشاء رابط ببببببواتساب مع رمز الدولة</title>
+    <title>إنشاء رابط واتساب مع رمز الدولة</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,16 +30,70 @@
 </head>
 <body>
 
-    <h1>إنشاء رdfgdgdابط واتساب</h1>
-    <p>اختر الدولة fdfgdfgوأدخل رقم الهاتف:</p>
+    <h1>إنشاء رابط واتساب</h1>
+    <p>اختر الدولة وأدخل رقم الهاتف:</p>
 
     <select id="countryCode">
-        <option value="966">السعودية (+966)</option>
-        <option value="971">الإمارات (+971)</option>
-        <option value="20">مصر (+20)</option>
-        <option value="1">الولايات المتحدة (+1)</option>
-        <option value="44">المملكة المتحدة (+44)</option>
-        <!-- يمكنك إضافة المزيد من الدول هنا -->
+        <option value="966">🇸🇦 السعودية (+966)</option>
+        <option value="971">🇦🇪 الإمارات (+971)</option>
+        <option value="20">🇪🇬 مصر (+20)</option>
+        <option value="1">🇺🇸 الولايات المتحدة (+1)</option>
+        <option value="44">🇬🇧 المملكة المتحدة (+44)</option>
+
+        <!-- دول إضافية كاملة -->
+        <option value="93">🇦🇫 أفغانستان (+93)</option>
+        <option value="355">🇦🇱 ألبانيا (+355)</option>
+        <option value="213">🇩🇿 الجزائر (+213)</option>
+        <option value="376">🇦🇩 أندورا (+376)</option>
+        <option value="244">🇦🇴 أنغولا (+244)</option>
+        <option value="54">🇦🇷 الأرجنتين (+54)</option>
+        <option value="61">🇦🇺 أستراليا (+61)</option>
+        <option value="43">🇦🇹 النمسا (+43)</option>
+        <option value="994">🇦🇿 أذربيجان (+994)</option>
+        <option value="973">🇧🇭 البحرين (+973)</option>
+        <option value="880">🇧🇩 بنغلاديش (+880)</option>
+        <option value="32">🇧🇪 بلجيكا (+32)</option>
+        <option value="55">🇧🇷 البرازيل (+55)</option>
+        <option value="86">🇨🇳 الصين (+86)</option>
+        <option value="33">🇫🇷 فرنسا (+33)</option>
+        <option value="49">🇩🇪 ألمانيا (+49)</option>
+        <option value="91">🇮🇳 الهند (+91)</option>
+        <option value="62">🇮🇩 إندونيسيا (+62)</option>
+        <option value="98">🇮🇷 إيران (+98)</option>
+        <option value="964">🇮🇶 العراق (+964)</option>
+        <option value="972">🇮🇱 إسرائيل (+972)</option>
+        <option value="39">🇮🇹 إيطاليا (+39)</option>
+        <option value="81">🇯🇵 اليابان (+81)</option>
+        <option value="962">🇯🇴 الأردن (+962)</option>
+        <option value="965">🇰🇼 الكويت (+965)</option>
+        <option value="961">🇱🇧 لبنان (+961)</option>
+        <option value="218">🇱🇾 ليبيا (+218)</option>
+        <option value="60">🇲🇾 ماليزيا (+60)</option>
+        <option value="212">🇲🇦 المغرب (+212)</option>
+        <option value="52">🇲🇽 المكسيك (+52)</option>
+        <option value="31">🇳🇱 هولندا (+31)</option>
+        <option value="64">🇳🇿 نيوزيلندا (+64)</option>
+        <option value="234">🇳🇬 نيجيريا (+234)</option>
+        <option value="47">🇳🇴 النرويج (+47)</option>
+        <option value="968">🇴🇲 عمان (+968)</option>
+        <option value="92">🇵🇰 باكستان (+92)</option>
+        <option value="63">🇵🇭 الفلبين (+63)</option>
+        <option value="48">🇵🇱 بولندا (+48)</option>
+        <option value="351">🇵🇹 البرتغال (+351)</option>
+        <option value="974">🇶🇦 قطر (+974)</option>
+        <option value="7">🇷🇺 روسيا (+7)</option>
+        <option value="966">🇸🇦 السعودية (+966)</option>
+        <option value="27">🇿🇦 جنوب أفريقيا (+27)</option>
+        <option value="34">🇪🇸 إسبانيا (+34)</option>
+        <option value="46">🇸🇪 السويد (+46)</option>
+        <option value="41">🇨🇭 سويسرا (+41)</option>
+        <option value="963">🇸🇾 سوريا (+963)</option>
+        <option value="66">🇹🇭 تايلاند (+66)</option>
+        <option value="216">🇹🇳 تونس (+216)</option>
+        <option value="90">🇹🇷 تركيا (+90)</option>
+        <option value="971">🇦🇪 الإمارات (+971)</option>
+        <option value="84">🇻🇳 فيتنام (+84)</option>
+        <option value="967">🇾🇪 اليمن (+967)</option>
     </select>
 
     <input type="text" id="phoneNumber" placeholder="مثال: 512345678">
@@ -48,20 +102,15 @@
 
     <script>
         function openWhatsApp() {
-            // الحصول على رمز الدولة ورقم الهاتف
             const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
 
-            // التحقق من أن الرقم غير فارغ
             if (!phoneNumber) {
                 alert("الرجاء إدخال رقم الهاتف!");
                 return;
             }
 
-            // إنشاء رابط واتساب
             const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}`;
-
-            // فتح الرابط في نافذة جديدة
             window.open(whatsappLink, '_blank');
         }
     </script>
