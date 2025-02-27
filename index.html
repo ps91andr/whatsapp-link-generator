@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنشاء رابط واتساب</title>
+    <title>إنشاء رابط واتساب مع رمز الدولة</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        input {
+        input, select {
             padding: 10px;
             font-size: 16px;
-            width: 200px;
+            margin: 5px;
         }
         button {
             padding: 10px 20px;
@@ -31,14 +31,25 @@
 <body>
 
     <h1>إنشاء رابط واتساب</h1>
-    <p>أدخل رقم الهاتف (بدون + أو 0):</p>
-    <input type="text" id="phoneNumber" placeholder="مثال: 966123456789">
+    <p>اختر الدولة وأدخل رقم الهاتف:</p>
+
+    <select id="countryCode">
+        <option value="966">السعودية (+966)</option>
+        <option value="971">الإمارات (+971)</option>
+        <option value="20">مصر (+20)</option>
+        <option value="1">الولايات المتحدة (+1)</option>
+        <option value="44">المملكة المتحدة (+44)</option>
+        <!-- يمكنك إضافة المزيد من الدول هنا -->
+    </select>
+
+    <input type="text" id="phoneNumber" placeholder="مثال: 512345678">
     <br><br>
     <button onclick="openWhatsApp()">فتح واتساب</button>
 
     <script>
         function openWhatsApp() {
-            // الحصول على الرقم من مربع النص
+            // الحصول على رمز الدولة ورقم الهاتف
+            const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
 
             // التحقق من أن الرقم غير فارغ
@@ -48,7 +59,7 @@
             }
 
             // إنشاء رابط واتساب
-            const whatsappLink = `https://wa.me/${phoneNumber}`;
+            const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}`;
 
             // فتح الرابط في نافذة جديدة
             window.open(whatsappLink, '_blank');
