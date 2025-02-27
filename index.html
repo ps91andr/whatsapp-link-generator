@@ -61,7 +61,7 @@
         <option value="62">🇮🇩 إندونيسيا (+62)</option>
         <option value="98">🇮🇷 إيران (+98)</option>
         <option value="964">🇮🇶 العراق (+964)</option>
-        <option value="972">🇮🇱 إسرائيل (+972)</option>
+        <option value="972">🇵🇱🇵🇱 فلسطين حرة (+972)</option>
         <option value="39">🇮🇹 إيطاليا (+39)</option>
         <option value="81">🇯🇵 اليابان (+81)</option>
         <option value="962">🇯🇴 الأردن (+962)</option>
@@ -96,11 +96,16 @@
         <option value="967">🇾🇪 اليمن (+967)</option>
     </select>
 
-    <input type="text" id="phoneNumber" placeholder="مثال: 512345678">
+    <input type="tel" id="phoneNumber" placeholder="مثال: 512345678" oninput="validatePhoneNumber(event)">
     <br><br>
     <button onclick="openWhatsApp()">فتح واتساب</button>
 
     <script>
+        function validatePhoneNumber(event) {
+            // إزالة أي حرف غير رقمي من حقل رقم الهاتف
+            event.target.value = event.target.value.replace(/[^0-9]/g, '');
+        }
+
         function openWhatsApp() {
             const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
